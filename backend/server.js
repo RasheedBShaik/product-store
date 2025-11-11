@@ -1,27 +1,40 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import cors from 'cors';            // ✅ import cors
-import { connectDB } from './config/db.js';
+import cors from 'cors';
+import { connectDB } from './config/db.js'; // your MongoDB connection
 import productRoutes from './routes/product.route.js';
+import path from 'path';
+import next from 'next';
 
 dotenv.config();
+
+const dev = process.env.NODE_ENV !== 'production';
+const appNext = next({ dev, dir: path.join(path.resolve(), 'frontend') });
+const handle = appNext.getRequestHandler();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// ✅ Enable CORS (allow frontend to access backend)
-app.use(cors({
-  origin: 'http://localhost:3000', // your Next.js frontend
-  credentials: true,               // if you plan to send cookies or auth headers
-}));
+// Middleware
+app.use(cors({ origin: dev ? 'http://localhost:3000' : process.env.FRONTEND_URL, credentials: true }));
+app.use(express.json());
 
-app.use(express.json()); // allows us to accept JSON data in req body 
-
-// ✅ Routes
+// API routes
 app.use('/api/products', productRoutes);
 
-// ✅ Start server & connect to DB
-app.listen(PORT, () => {
-  connectDB();
-  console.log(`✅ Server is running on http://localhost:${PORT}`);
-});
+// Connect DB and start server
+connectDB()
+  .then(() => appNext.prepare())
+  .then(() => {
+// After all API routes
+app.use((req, res) => handle(req, res));
+
+
+
+    app.listen(PORT, () => {
+      console.log(`✅ Server running on http://localhost:${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error('❌ Server failed to start:', err);
+  });
