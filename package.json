@@ -2,19 +2,19 @@
   "name": "product-store",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon backend/server.js",
     "build": "npm ci --prefix frontend && npm run build --prefix frontend",
-    "start": "npx cross-env NODE_ENV=production node backend/server.js"
-
+    "start": "node backend/server.js"
   },
-  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "mongoose": "^8.19.3",
