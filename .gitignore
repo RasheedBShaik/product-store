@@ -1,9 +1,12 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# ========================
+# Node dependencies
+# ========================
 /node_modules
-frontend/node_modules/
+/frontend/node_modules
 
+# ========================
+# Yarn / pnpm (if ever used)
+# ========================
 /.pnp
 .pnp.*
 .yarn/*
@@ -12,33 +15,60 @@ frontend/node_modules/
 !.yarn/releases
 !.yarn/versions
 
-# testing
+# ========================
+# Testing
+# ========================
 /coverage
 
-# next.js
-/.next/
-/out/
-
-# production
+# ========================
+# Next.js build outputs
+# ========================
+/.next
+/frontend/.next
+/out
 /build
+/.turbo
+/frontend/.turbo
 
-# misc
-.DS_Store
-*.pem
+# ========================
+# Production / deploy artifacts
+# ========================
+dist
 
-# debug
+# ========================
+# Environment variables
+# ========================
+.env
+.env.local
+.env.*.local
+/frontend/.env
+/frontend/.env.local
+
+# ========================
+# Debug logs
+# ========================
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
-frontend/.env
-# vercel
-.vercel
+# ========================
+# OS files
+# ========================
+.DS_Store
 
-# typescript
+# ========================
+# Security / certificates
+# ========================
+*.pem
+
+# ========================
+# TypeScript
+# ========================
 *.tsbuildinfo
 next-env.d.ts
-.env
+
+# ========================
+# Vercel
+# ========================
+.vercel
