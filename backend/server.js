@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 5000;
 const allowedOrigins = [
   'http://localhost:3000',                   // dev frontend
   'https://product-store-zgez.onrender.com', // admin site
-  'https://your-user-website.com'            // user-facing site (replace with actual)
+  'https://u-product-store-zgez.onrender.com/'// user-facing site
 ];
 
 // Middleware
