@@ -9,7 +9,7 @@ export default function page() {
 
       <Link
         href="/createpage"
-        className="w-fit block mx-auto mt-6 hover:underline"
+        className="w-fit block mx-auto my-6 hover:underline"
       >
         Create Product
       </Link>
