@@ -13,18 +13,21 @@ export default function adminlogin() {
     e.preventDefault(); // prevent form reload
 
     if (username === "Admin" && password === "Password"){
-      window.open("https://product-store-zgez.onrender.com/", "_blank");
+      window.open("/homepage", "_blank");
     } 
     else if (username === "admin" && password === "password"){
-      window.open("https://product-store-zgez.onrender.com/", "_blank");
-
+      window.open("/homepage", "_blank");
+    }
+    else if (username === "Admin" && password === "password"){
+      window.open("/homepage", "_blank");
     }
     else if (username === "Name" && password === "Password"){
-      window.open("https://product-store-zgez.onrender.com/", "_blank");
+      window.open("/homepage", "_blank");
     } 
     else if (username === "name" && password === "password"){
-      window.open("https://product-store-zgez.onrender.com/", "_blank");
-    } 
+      window.open("/homepage", "_blank");
+    }
+     
     else {
       alert("Invalid username or password");
     }
@@ -81,6 +84,8 @@ export default function adminlogin() {
         >
           Login
         </button>
+
+        <Link href={""}>Testing</Link>
       </form>
     </div>
   );
