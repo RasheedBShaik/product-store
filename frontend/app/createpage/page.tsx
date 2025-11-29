@@ -93,7 +93,7 @@ export default function CreatePage() {
         </button>
       </form>
 
-      <Link href="/" className="block mt-6 w-fit mx-auto hover:underline">
+      <Link href="/homepage" className="block mt-6 w-fit mx-auto hover:underline">
         Back to Home
       </Link>
     </div>
