@@ -57,7 +57,7 @@ export default function CreatePage() {
 
 
   return (
-    <div className="text-center mt-10">
+    <div className="text-center my-10">
       <h1 className="text-3xl font-bold">Create Product</h1>
 
       <form
