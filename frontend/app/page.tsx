@@ -37,7 +37,7 @@ export default function adminlogin() {
     <div className="flex flex-col max-w-[1200px] w-full h-screen mx-auto">
       <div className="flex flex-col gap-4 pt-25 pb-15">
         <div className="pl-[25%]">
-          <Link href="/" className="hover:underline rounded p-2 w-fit">
+          <Link href="https://u-product-store-zgez.onrender.com/" className="hover:underline rounded p-2 w-fit">
             Back
           </Link>
         </div>
