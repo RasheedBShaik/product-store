@@ -84,8 +84,6 @@ export default function adminlogin() {
         >
           Login
         </button>
-
-        <Link href={""}>Testing</Link>
       </form>
     </div>
   );
