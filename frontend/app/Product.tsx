@@ -101,7 +101,7 @@ export const Product = () => {
   if (error) return <p style={{ color: "red" }}>{error}</p>;
 
   return (
-    <div className="w-[90%] mx-auto mt-10">
+    <div className="w-[90%] mx-auto my-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
         {products.length === 0 ? (
           <p className="col-span-full text-center text-gray-500">No products added yet.</p>
