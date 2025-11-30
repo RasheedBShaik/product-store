@@ -29,3 +29,7 @@ It includes a simple **Product Management**, and API integration for CRUD operat
 | [Express.js](https://expressjs.com/) | Backend API framework |
 
 ---
+
+## Credentials
+Name - name (all lower case)
+Password-password (all lower case)
