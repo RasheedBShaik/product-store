@@ -31,5 +31,5 @@ It includes a simple **Product Management**, and API integration for CRUD operat
 ---
 
 ## Credentials
-Name - name (all lower case)
-Password-password (all lower case)
+- Name - name (all lower case)
+- Password-password (all lower case)
